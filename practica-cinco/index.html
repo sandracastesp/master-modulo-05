@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta eventos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Registro para eventos</h1>
+  <p> Completa esta encuesta para conocer tus preferencias sobre eventos. Nos gustaría saber las experiencias te
+    interesan, cuándo puedes participar y cómo podemos contactarte.</p>
+  <form id="registroEvento">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre">
+    <br>
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+    <br>
+    <label for="telefono">Teléfono celular:</label>
+    <input type="tel" id="telefono" name="telefono" required>
+    <br>
+    <label>¿Qué eventos te interesan? Selecciona uno o más</label>
+    <label><input type="checkbox" name="intereses" value="musica"> Festivales musicales o conciertos</label>
+    <label><input type="checkbox" name="intereses" value="talleres"> Talleres</label>
+    <label><input type="checkbox" name="intereses" value="exposiciones"> Exposiciones</label>
+    <label><input type="checkbox" name="intereses" value="conferencias"> Conferencias o congresos</label>
+    <label><input type="checkbox" name="intereses" value="deporte"> Eventos deportivos</label>
+    <label><input type="checkbox" name="intereses" value="cultura"> Festivales culturales </label>
+    <br>
+    <label>Horario preferido para asistir a eventos:</label>
+    <label><input type="radio" name="horario" value="mañana" required> Mañana</label>
+    <label><input type="radio" name="horario" value="tarde"> Tarde</label>
+    <label><input type="radio" name="horario" value="noche"> Noche</label>
+    <br>
+    <label for="hora">Hora preferida:</label>
+    <input type="time" id="hora" name="hora" required>
+    <br>
+    <label for="fecha">Elige una fecha para el evento:</label>
+    <input type="date" id="fecha" name="fecha" required>
+    <br>
+    <label for="ciudad">Ciudad:</label>
+    <select id="ciudad" name="ciudad">
+      <option value="cdmx">Ciudad de México</option>
+      <option value="guadalajara">Guadalajara</option>
+      <option value="monterrey">Monterrey</option>
+    </select>
+    <br>
+    <label for="archivo">Agrega un documento de identificación (opcional) en formato PDF, JPG o PNG:</label>
+    <input type="file" id="archivo" name="archivo" accept="image/png, image/jpeg, application/pdf">
+    <br>
+    <button type="submit">Registrarse</button>
+  </form>
+  <script src="formulario.js"></script>
+</body>
+
+</html>
