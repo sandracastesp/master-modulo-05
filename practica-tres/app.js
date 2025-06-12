@@ -3,7 +3,7 @@ const fetchBtn = document.getElementById('fetch-btn');
 const dataContainer = document.getElementById('data-container');
 
 fetchBtn.addEventListener('click', () => {
-  fetch('https://api.disneyapi.dev/character')
+  fetch('https://api.api-onepiece.com/v2/fruits/en')
     .then(response => {
       if (!response.ok) {
         throw new Error('Error en la solicitud');
@@ -29,7 +29,7 @@ fetchBtn.addEventListener('click', () => {
 const axiosBtn = document.getElementById('axios-btn');
 
 axiosBtn.addEventListener('click', () => {
-  axios.get('https://rickandmortyapi.com/api/character')
+  axios.get('https://api.api-onepiece.com/v2/fruits/en')
     .then(response => {
       const data = response.data;
       // Completar: renderizar datos en el contenedor
@@ -43,14 +43,14 @@ axiosBtn.addEventListener('click', () => {
 
 // Ejemplo de función de renderizado:
 // Puedes adecuar este código
-function renderCharacters(characters) {
+function renderFruits(fruits) {
   dataContainer.innerHTML = '';
-  characters.forEach(character => {
-    const characterElement = document.createElement('div');
-    characterElement.innerHTML = `
-      <h3>${character.name}</h3>
-      <img src="${character.image}" alt="${character.name}">
+  fruit.forEach(fruit => {
+    const fruitElement = document.createElement('div');
+    fruitElement.innerHTML = `
+      <h3>${fruit.name}</h3>
+      <img src="${fruit.image}" alt="${fruit.name}">
     `;
-    dataContainer.appendChild(characterElement);
+    dataContainer.appendChild(fruitElement);
   });
 }
