@@ -1,9 +1,8 @@
-// Implementa las Solicitudes con Fetch
 const fetchBtn = document.getElementById('fetch-btn');
 const dataContainer = document.getElementById('data-container');
 
 fetchBtn.addEventListener('click', () => {
-  fetch('https://api.api-onepiece.com/v2/fruits/en')
+  fetch('https://gateway.marvel.com/v1/public/characters?ts=1&apikey=5574e297d37e7679414aec93766cebe4&hash=080f7e090b1f176fb125a99eb1bd94f3&nameStartsWith=C')
     .then(response => {
       if (!response.ok) {
         throw new Error('Error en la solicitud');
@@ -11,8 +10,7 @@ fetchBtn.addEventListener('click', () => {
       return response.json();
     })
     .then(data => {
-      // Completar: renderizar datos en el contenedor
-      // Pista: Usa `data.results` para iterar sobre los personajes obtenidos.
+      renderCharacters(data.data.results);
     })
     .catch(error => {
       console.error('Error:', error);
@@ -29,11 +27,12 @@ fetchBtn.addEventListener('click', () => {
 const axiosBtn = document.getElementById('axios-btn');
 
 axiosBtn.addEventListener('click', () => {
-  axios.get('https://api.api-onepiece.com/v2/fruits/en')
+  axios.get('https://gateway.marvel.com/v1/public/characters?ts=1&apikey=5574e297d37e7679414aec93766cebe4&hash=080f7e090b1f176fb125a99eb1bd94f3&nameStartsWith=C')
     .then(response => {
       const data = response.data;
       // Completar: renderizar datos en el contenedor
-      // Pista: Observa que Axios ya convierte la respuesta JSON, por lo que no necesitas usar `.json()`.
+      // Pista: Observa que Axios ya convierte la respuesta JSON, por lo que no necesitas usar `.json()`.}
+      renderCharacters(data.data.results);
     })
     .catch(error => {
       console.error('Error:', error);
@@ -41,16 +40,22 @@ axiosBtn.addEventListener('click', () => {
     });
 });
 
-// Ejemplo de función de renderizado:
-// Puedes adecuar este código
-function renderFruits(fruits) {
+function renderCharacters(characters) {
   dataContainer.innerHTML = '';
-  fruit.forEach(fruit => {
-    const fruitElement = document.createElement('div');
-    fruitElement.innerHTML = `
-      <h3>${fruit.name}</h3>
-      <img src="${fruit.image}" alt="${fruit.name}">
+  characters.forEach(character => {
+    const characterElement = document.createElement('div');
+    characterElement.classList.add('characters-item');
+    characterElement.innerHTML = `
+      <h2>${character.name}</h2>
+      <img src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}" width="150">
     `;
-    dataContainer.appendChild(fruitElement);
+    dataContainer.appendChild(characterElement);
   });
 }
+
+const clearBtn = document.getElementById('clear-btn');
+
+clearBtn.addEventListener('click', () => {
+  dataContainer.innerHTML = '';
+});
+      

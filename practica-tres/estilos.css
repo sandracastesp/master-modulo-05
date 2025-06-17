@@ -1,17 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
-* {
-font-family: 'DM Sans', sans-serif;
-} 
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 
 body {
-background-color: #ffeaed;
+    background-color: #000000;
+    font-family: "Bungee Spice", sans-serif;
+    font-size: 0.7rem;
+    color: aliceblue;
 }
 
 h1 {
+    font-family: "Bangers", sans-serif;
+    font-size: 4.5rem;
     text-align: center;
-    color: rgb(137, 5, 5);
+    color: rgb(207, 11, 11);
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
+
 
 .botones {
     display: flex;
@@ -19,20 +25,70 @@ h1 {
     gap: 10px;
 }
 
-button {
-border: none;
-background-color: rgb(160, 7, 37);
-border-radius: 10px;
-color: #ffffff;
-font-size: 0.8rem;
-padding: 10px 20px;
-box-shadow: 0cap 10px rgba(0, 0.1, 0, 0.1);
+.clear-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-button:hover{
-color: white;
-cursor: default;
-background-color:  rgb(109, 5, 26);
-transition: all .3s ease-out;
-cursor:pointer;
+.clear-container button {
+    background-color: rgb(47, 68, 91);
+    color: white;
+    border: 1px solid rgb(153, 158, 233);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.clear-container button:hover {
+    background-color: rgb(140, 158, 177);
+    color: #151212;
+    border: 1px solid rgb(219, 218, 238);
+    transition: all .3s ease-out;
+}
+
+button {
+    font-family: "Bowlby One SC", sans-serif;
+    border: none;
+    background-color: rgb(52, 97, 232);
+    border-radius: 10px;
+    border: 1px solid rgb(182, 201, 243);
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    box-shadow: 0cap 10px rgba(0, 0.1, 0, 0.1);
+}
+
+button:hover {
+    color: white;
+    cursor: default;
+    background-color: rgb(14, 19, 116);
+    border: 1px solid rgb(134, 148, 207);
+    transition: all .3s ease-out;
+    cursor: pointer;
+}
+
+#data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.characters-item {
+    display: grid;
+    grid-auto-rows: 100px 200px;
+    gap: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+    height: 90%;
 }
