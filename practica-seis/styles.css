@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    font-family: 'Fredoka', sans-serif;
+    margin: 10px;
+}
+
+form {
+    width: 60%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+h1 {
+    color: rgb(110, 8, 150);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 60%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+button { 
+    width: 100%;
+    border: none; 
+    background-color: rgb(129, 57, 158);
+    border-radius: 10px; 
+    color: #ffffff;
+    height: 35px;
+    margin: 10px auto;
+  }
+  
+  
+  button:hover{
+    color: white; 
+    cursor: default;
+    background-color: rgb(110, 8, 150);
+    transition: all .3s ease-out;
+    cursor:pointer;
+  }

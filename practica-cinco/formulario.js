@@ -10,6 +10,7 @@ document.getElementById('registroEvento').addEventListener('submit', function(ev
       const fecha = document.getElementById('fecha').value;
       const hora = document.getElementById('hora').value;
       const ciudad = document.getElementById('ciudad').value;
+      const archivo = document.getElementById('archivo').files[0];
 
       // Validaciones básicas
       if (!nombre || !correo || !telefono || intereses.length === 0 || !horario) {
@@ -28,7 +29,6 @@ document.getElementById('registroEvento').addEventListener('submit', function(ev
       return;
     }
 
-     
     if (archivo) {
         const formatosPermitidos = ['image/jpeg', 'image/png','application/pdf'];
         if (!formatosPermitidos.includes(archivo.type)) {
